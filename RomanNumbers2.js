@@ -10,6 +10,8 @@ ArabicToRoman:function(n) {
     }
 
     ArabicNummer = n.toString()
+    ArabicNummer = ArabicNummer.split("")
+    ArabicNummer = ArabicNummer.reverse()
     ArabicLength = ArabicNummer.length
     result = ""
 
@@ -19,8 +21,22 @@ ArabicToRoman:function(n) {
 
         switch(x){
             case '0': break;
-            case '1': result = result.concat("I"); break;
-            case '2': result = result.concat("II"); break;
+            case '1': 
+            if(i === 0 ) {
+                tempresult = result
+                result = tempresult.concat("I"); break;
+            }
+            else if (i === 1) {
+                result = result.concat("X"); break;
+            }
+            case '2': 
+            if(i === 0) {
+                result = result.concat("II"); break;
+            }
+            else if(i === 1) {
+                result = result.concat("XX"); break;
+            }
+
             case '3': result = result.concat("III"); break;
             case '4': result = result.concat("IV"); break;
             case '5': result = result.concat("V"); break;
@@ -37,6 +53,5 @@ ArabicToRoman:function(n) {
 }
 
 }
-
 
 

@@ -27,9 +27,9 @@ describe('RomanNumbers2', function() {
 
      });
 
-    it("should convert 11 to roman", function() {
+    it("should convert 12 to roman", function() {
 
-        expect(romannumbers.ArabicToRoman(11)).to.equal("XI")
+        expect(romannumbers.ArabicToRoman(12)).to.equal("XII")
 
     });
 
